@@ -93,13 +93,11 @@ def checkout(cart, coupons)
   # some irritated customers
   
   totaled_cart = apply_clearance(apply_coupons(consolidate_cart(cart), coupons))
-  puts totaled_cart
   i = 0
   total = 0
   while i < totaled_cart.length do
-    puts totaled_cart[i]
     total += (totaled_cart[i][:price] * totaled_cart[i][:count])
-    puts total
+    i += 1
   end
   if total > 100 
     total = (0.9*total).round(2)
